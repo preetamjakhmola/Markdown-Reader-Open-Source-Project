@@ -1,94 +1,96 @@
 # Markdown Reader Extension
 
-Chrome aur Edge browser ke liye Markdown Reader extension - .md files aur folders ko directly browser me render karta hai.
+A browser extension for **Chrome** and **Microsoft Edge** that renders `.md` and `.markdown` files directly in the browser, including folder browsing for multiple Markdown files.
 
 ## Features
-- .md aur .markdown files ko automatically detect karta hai
-- **Folder URLs ko support karta hai** - saari MD files list me dikhti hain
-- GitHub jaisa markdown rendering
-- Sidebar me Table of Contents (TOC)
-- File list sidebar (folder view me)
-- Clean aur readable interface
-- Syntax highlighting support
+
+- Detects `.md` and `.markdown` files automatically
+- **Folder URLs** — lists all Markdown files in a directory
+- GitHub-style Markdown rendering
+- Sidebar **Table of Contents** (TOC)
+- File list sidebar in folder view
+- Clean, readable layout
+- Syntax highlighting for code blocks
 
 ## Installation
 
-### Chrome me install karne ke liye:
+### Chrome
 
-1. Chrome browser kholen
-2. Address bar me type karen: `chrome://extensions/`
-3. **"Developer mode"** ON karen (top-right corner me toggle)
-4. **"Load unpacked"** button click karen
-5. Is folder ko select karen: `e:\Projects\EXTNSIONS\MD_Reader`
+1. Open Chrome.
+2. Go to `chrome://extensions/`
+3. Turn **Developer mode** on (toggle in the top-right).
+4. Click **Load unpacked**.
+5. Choose the folder that contains this extension’s `manifest.json` (the extension root directory).
 
-### Edge me install karne ke liye:
+### Microsoft Edge
 
-1. Edge browser kholen
-2. Address bar me type karen: `edge://extensions/`
-3. **"Developer mode"** ON karen (left sidebar me)
-4. **"Load unpacked"** button click karen
-5. Is folder ko select karen: `e:\Projects\EXTNSIONS\MD_Reader`
+1. Open Edge.
+2. Go to `edge://extensions/`
+3. Turn **Developer mode** on (sidebar or bottom of the page, depending on version).
+4. Click **Load unpacked**.
+5. Choose the same extension root folder (where `manifest.json` is).
 
 ## Usage
 
-### Single Markdown File:
+### Single Markdown file
 
-1. Extension install karne ke baad, koi bhi `.md` ya `.markdown` file browser me open karen
-   - File → Open File (Ctrl+O)
-   - Ya file ko browser me drag & drop karen
+1. After installation, open any `.md` or `.markdown` file in the browser (e.g. **File → Open** or drag-and-drop onto the window).
+2. The page should render with:
+   - TOC in the left sidebar
+   - Formatted content in the main area
+3. Click headings in the TOC to jump to sections.
 
-2. File automatically render ho jayegi with:
-   - Left sidebar me Table of Contents
-   - Main area me formatted markdown content
+### Folder view
 
-3. TOC me kisi bhi heading pe click karke us section pe jump kar sakte ho
-
-### Folder View:
-
-1. Koi folder URL browser me open karen, jaise:
+1. Open a `file://` URL that points to a folder on your machine, for example:
    ```
-   file:///E:/Projects/OFCH_Orderman/Document/D-Client/D--clients-MT-ImpDoc/memory/
+   file:///C:/Documents/notes/
    ```
+   (Adjust the drive and path for your OS; on macOS/Linux the form is different, e.g. `file:///Users/you/Documents/notes/`.)
+2. The extension can show:
+   - **Left:** list of `.md` files in that folder
+   - **Middle:** TOC for the current file
+   - **Main:** rendered content for the selected file
+3. Click a file in the list to open it.
 
-2. Extension automatically detect karega aur UI dikhayega with:
-   - **Left sidebar:** Folder ki saari .md files ki list
-   - **Middle sidebar:** Current file ka Table of Contents
-   - **Main area:** Selected markdown file ka content
+## File URL access (required for local files)
 
-3. File list me kisi bhi file pe click karke usko view kar sakte ho
+The extension needs permission to read local `file://` pages:
 
-## Important Note
+1. Open `chrome://extensions/` or `edge://extensions/`.
+2. Find **Markdown Reader**.
+3. Open **Details**.
+4. Enable **Allow access to file URLs** (wording may vary slightly).
 
-**File Access Permission:**
-Extension ko local files access karne ke liye permission deni hogi:
+Without this, local Markdown files opened via `file://` may not render correctly.
 
-1. `chrome://extensions/` ya `edge://extensions/` pe jaayein
-2. "Markdown Reader" extension dhundein
-3. **"Details"** button click karen
-4. Neeche scroll karke **"Allow access to file URLs"** option ON karen
+## Project layout
 
-Bina is permission ke extension local .md files ko render nahi kar payega!
-
-## Files Structure
 ```
-MD_Reader/
-├── manifest.json       # Extension configuration
-├── content.js          # Main script to detect and render MD files
-├── viewer.css          # Markdown styling (GitHub style)
-└── README.md           # Documentation
+<extension-root>/
+├── manifest.json    # Extension manifest
+├── background.js    # Service worker / background logic
+├── content.js       # In-page detection and rendering
+├── viewer.css       # Markdown / viewer styles
+├── guide.html       # Guide / help page
+├── guide.css        # Guide styles
+└── README.md        # This file
 ```
+
+Replace `<extension-root>` with whatever directory you unpacked or cloned the extension into.
 
 ## Examples
 
 **Single file:**
+
 ```
-file:///C:/Users/YourName/Documents/example.md
+file:///C:/Documents/example.md
 ```
 
 **Folder:**
+
 ```
-file:///E:/Projects/OFCH_Orderman/Document/D-Client/D--clients-MT-ImpDoc/memory/
+file:///C:/Documents/my-notes/
 ```
 
-Extension automatically detect karke render kar dega!
-
+The extension detects Markdown in these contexts and applies the reader UI when appropriate.
