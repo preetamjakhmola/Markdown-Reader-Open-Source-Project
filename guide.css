@@ -1,0 +1,143 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --border: #e1e4e8;
+  --text: #24292e;
+  --muted: #586069;
+  --accent: #0969da;
+  --accent-soft: rgba(9, 105, 218, 0.08);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+.guide-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.guide-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.guide-lead {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.guide-section {
+  margin-bottom: 28px;
+}
+
+.guide-section h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.guide-section p {
+  margin: 0 0 12px;
+}
+
+.guide-section p:last-child {
+  margin-bottom: 0;
+}
+
+.guide-steps {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.guide-steps li {
+  margin-bottom: 10px;
+}
+
+.guide-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.guide-callout {
+  background: var(--accent-soft);
+  border: 1px solid rgba(9, 105, 218, 0.2);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 16px 0 0;
+}
+
+.guide-callout strong {
+  color: var(--accent);
+}
+
+.guide-code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--surface);
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  word-break: break-all;
+}
+
+.guide-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-features li {
+  position: relative;
+  padding-left: 1.35em;
+  margin-bottom: 8px;
+}
+
+.guide-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.guide-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.guide-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.guide-footer a:hover {
+  text-decoration: underline;
+}

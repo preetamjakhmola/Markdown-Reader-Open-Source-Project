@@ -1,9 +1,16 @@
 {
   "manifest_version": 3,
   "name": "Markdown Reader - Open Source Project",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Read and view markdown files in browser. [Allow access to file URLs from extension settings]",
   "permissions": [],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "guide.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
       "matches": ["file:///*"],

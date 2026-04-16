@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Getting started — Markdown Reader</title>
+    <link rel="stylesheet" href="guide.css" />
+  </head>
+  <body>
+    <div class="guide-wrap">
+      <header class="guide-header">
+        <h1>Getting started</h1>
+        <p class="guide-lead">
+          Markdown Reader shows local <span class="guide-code">.md</span> files in the browser with a
+          documentation-style layout, outline, and optional folder browsing.
+        </p>
+      </header>
+
+      <section class="guide-section" aria-labelledby="step-file-urls">
+        <h2 id="step-file-urls">1. Allow access to file URLs</h2>
+        <p>
+          This extension runs on local files (<span class="guide-code">file://</span>). Chrome must be
+          allowed to inject the reader on those pages.
+        </p>
+        <ol class="guide-steps">
+          <li>Open <span class="guide-code">chrome://extensions</span> (paste into the address bar).</li>
+          <li>Find <strong>Markdown Reader</strong> and click <strong>Details</strong>.</li>
+          <li>Turn on <strong>Allow access to file URLs</strong>.</li>
+        </ol>
+        <div class="guide-callout" role="note">
+          <strong>Required.</strong> Without this, opening a local <span class="guide-code">.md</span> file
+          will show plain text instead of the reader.
+        </div>
+      </section>
+
+      <section class="guide-section" aria-labelledby="step-open">
+        <h2 id="step-open">2. Open a Markdown file</h2>
+        <p>Use <strong>File → Open File</strong> (Ctrl+O) or drag a <span class="guide-code">.md</span> file
+          into the browser. The page should render with the sidebar, table of contents, and formatted
+          content.</p>
+      </section>
+
+      <section class="guide-section" aria-labelledby="step-folder">
+        <h2 id="step-folder">3. Browse a folder of Markdown files</h2>
+        <p>
+          Open a folder URL in the address bar, for example:
+          <span class="guide-code">file:///C:/path/to/your/docs/</span>
+        </p>
+        <p>
+          The extension can jump between <span class="guide-code">.md</span> files from the sidebar. Use
+          the rail icons for <strong>Files in folder</strong>, search, and outline.
+        </p>
+      </section>
+
+      <section class="guide-section" aria-labelledby="step-tips">
+        <h2 id="step-tips">Tips</h2>
+        <ul class="guide-features">
+          <li>Collapse the sidebar with the chevron at the bottom of the left rail for more reading space.</li>
+          <li>Use the menu (⋯) for raw source, fullscreen, print, and about.</li>
+          <li>Filter headings in the outline using the search box above the table of contents.</li>
+        </ul>
+      </section>
+
+      <footer class="guide-footer">
+        You can reopen this page anytime from the extension’s <strong>Options</strong> (right-click the
+        extension icon → Options), or from <strong>About</strong> inside the reader menu when viewing a
+        file.
+      </footer>
+    </div>
+  </body>
+</html>
